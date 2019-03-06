@@ -1,0 +1,54 @@
+{
+  "name": "cloudinary-sass-loader",
+  "version": "1.0.0",
+  "description": "Sass loader for Webpack with cloudinary-url support",
+  "main": "lib/loader.js",
+  "scripts": {
+    "compile": "babel src --out-dir lib",
+    "build": "npm run compile",
+    "coverage": "npm test",
+    "pretest": "npm run build",
+    "test": "jest",
+    "prelint": "npm run build",
+    "lint": "eslint src test",
+    "prepublishOnly": "npm test",
+    "lint-test-style": "sass-lint -c .sass-lint.yml 'test/**/*.scss' -v"
+  },
+  "keywords": [],
+  "author": "Cloudinary",
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "dependencies": {
+    "cloudinary-core": "^2.6.2",
+    "loader-utils": "^1.2.3",
+    "sass-loader": "^7.1.0"
+  },
+  "peerDependencies": {
+    "webpack": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.1",
+    "@webpack-contrib/eslint-config-webpack": "^3.0.0",
+    "babel-jest": "^24.1.0",
+    "eslint": "^5.3.0",
+    "eslint-plugin-import": "^2.16.0",
+    "jest": "^24.2.0-alpha.0",
+    "jest-haste-map": "^24.0.0",
+    "jest-resolve": "^24.1.0",
+    "memory-fs": "^0.4.1",
+    "node-sass": "^4.11.0",
+    "raw-loader": "^1.0.0",
+    "request": "^2.88.0",
+    "sass": "^1.17.2",
+    "sass-lint": "^1.12.1",
+    "stylelint": "^9.10.1",
+    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-webpack-plugin": "^0.10.5",
+    "webpack": "^4.29.6",
+    "webpack-shell-plugin": "^0.5.0"
+  }
+}

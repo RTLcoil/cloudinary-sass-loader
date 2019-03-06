@@ -1,0 +1,10 @@
+.idea
+.travis.yml
+.babelrc
+.eslintrc
+.sasslintrc
+.stylelintrc
+coverage
+examples
+test
+jest.config.js
