@@ -10,7 +10,7 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              functions: {'cloudinary-url': cloudinaryUrlFactory('demo')}
+              functions: {'cloudinary-url': cloudinaryUrlFactory({cloud_name: 'demo'})}
             }
           }]
       }]

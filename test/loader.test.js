@@ -31,9 +31,9 @@ test('Compiles cloudinary-url with nested calls', async () => {
   expect(removeSpaces(output)).toBe(expectedResult);
 });
 
-test('Throws error if cloudName is not specified', async () => {
+test('Throws error if cloud_name is not specified', async () => {
   await expect(useConfig(loaderNoCloudName, './styles/custom-func.scss'))
-      .rejects.containsWebpackError(/cloudName/);
+      .rejects.containsWebpackError(/cloud_name/);
 });
 
 test('Throws error on duplicate function name', async () => {

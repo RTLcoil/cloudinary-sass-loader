@@ -26,8 +26,8 @@ function getDefaultSassImplementation() {
   return sass;
 }
 
-export default function cloudinaryUrlFactory(cloudName, sassImplementation = null) {
+export default function cloudinaryUrlFactory(cloudinaryOptions, sassImplementation = null) {
   const sass = sassImplementation || getDefaultSassImplementation();
-  const cloudinary = Cloudinary.new({ cloud_name: cloudName });
+  const cloudinary = new Cloudinary(cloudinaryOptions);
   return cloudinaryUrl.bind(null, sass, cloudinary);
 }

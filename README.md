@@ -12,7 +12,7 @@ Cloudinary provides URL and HTTP based APIs that can be easily integrated with a
 
 For SASS/SCSS, Cloudinary provides a webpack loader for simplifying the integration even further. 
 
-It's a drop-in replacement for sass-loader with one extra option (`cloudName`).
+It's a drop-in replacement for sass-loader with extra options.
 
 ## Install
 
@@ -20,7 +20,13 @@ It's a drop-in replacement for sass-loader with one extra option (`cloudName`).
 
 ## Options
 
-`cloudName` - cloud name for you account. It's a mandatory parameter.
+Required:
+
+* `cloud_name` - The cloudinary cloud name associated with your Cloudinary account.
+
+Optional:
+
+* `private_cdn`, `secure_distribution`, `cname`, `cdn_subdomain` - Please refer to [Cloudinary Documentation](http://cloudinary.com/documentation/rails_additional_topics#configuration_options) for information on these parameters.
 
 As it's a wrapper around [Sass Loader](https://www.npmjs.com/package/sass-loader), all parameters, supported by it are also supported by cloudinary-sass-loader.
 
@@ -39,7 +45,7 @@ module.exports = {
                 "css-loader",
                 {  
 				  loader: "cloudinary-sass-loader"),  
-				  options: {cloudName: 'demo'} // replace cloudName with your own
+				  options: {cloud_name: 'demo'} // replace cloud_name with your own
 				}
             ]
         }]

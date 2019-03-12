@@ -11,7 +11,7 @@ module.exports = {
           'raw-loader',
           {
             loader: path.resolve(__dirname, '../../lib/loader.js'),
-            options: {cloudName: 'demo', implementation: sass}
+            options: {cloud_name: 'demo', implementation: sass}
           }]
       }]
   }

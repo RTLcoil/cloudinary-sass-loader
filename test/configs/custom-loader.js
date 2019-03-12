@@ -9,7 +9,7 @@ module.exports = {
           'raw-loader',
           {
             loader: path.resolve(__dirname, '../../lib/loader.js'),
-            options: {cloudName: 'demo'}
+            options: {cloud_name: 'demo'}
           }]
       }]
   }

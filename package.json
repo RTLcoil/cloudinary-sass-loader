@@ -23,6 +23,7 @@
   "dependencies": {
     "cloudinary-core": "^2.6.2",
     "loader-utils": "^1.2.3",
+    "lodash": "^4.17.11",
     "sass-loader": "^7.1.0"
   },
   "peerDependencies": {

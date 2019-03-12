@@ -10,7 +10,7 @@ module.exports = {
           {
             loader: path.resolve(__dirname, '../../lib/loader.js'),
             options: {
-              cloudName: 'demo',
+              cloud_name: 'demo',
               functions: {
                 'cloudinary-url': function cloudinaryUrl(){}
               }
