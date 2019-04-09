@@ -17,7 +17,7 @@ export default function (source) {
   }
 
   const registered = Object.keys(options.functions);
-  if (registered.find(x => !!`${x}(`.startsWith(`${cloudinaryFunctionName}(`))) {
+  if (registered.find(x => x === cloudinaryFunctionName)) {
     throw new Error(`Function name '${cloudinaryFunctionName}' is reserved`);
   }
   const cloudinaryOptions = pick(options, cloudinaryOptionKeys);
