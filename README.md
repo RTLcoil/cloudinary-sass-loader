@@ -30,6 +30,8 @@ As it is a wrapper around [Sass Loader](https://www.npmjs.com/package/sass-loade
 
 ## Examples
 
+### Using cloudinary-sass-loader
+
 Add the loader to your webpack config:
 ```js
 // webpack.config.js
@@ -62,6 +64,8 @@ The loader will transpile this to a simple url:
 ```css
 body { background: url("http://res.cloudinary.com/demo/image/upload/c_fit,h_40,w_11/sample")) }
 ```
+
+### Using sass-loader
 
 If you want keep using sass-loader directly, you can define a custom function in your config for `cloudinary-url`
 
