@@ -10,9 +10,7 @@ Cloudinary offers comprehensive APIs and administration capabilities and is easy
 
 Cloudinary provides URL and HTTP based APIs that can be easily integrated with any Web development framework.
 
-For SASS/SCSS, Cloudinary provides a webpack loader for simplifying the integration even further.
-
-It's a drop-in replacement for sass-loader with extra options.
+Cloudinary provides a webpack loader for simplifying the integration with SASS/SCSS even further. It is a drop-in replacement for sass-loader with extra options.
 
 ## Install
 
@@ -28,7 +26,7 @@ Optional:
 
 * `private_cdn`, `secure_distribution`, `cname`, `cdn_subdomain` - Please refer to [Cloudinary Documentation](http://cloudinary.com/documentation/rails_additional_topics#configuration_options) for information on these parameters.
 
-As it's a wrapper around [Sass Loader](https://www.npmjs.com/package/sass-loader), all parameters, supported by it are also supported by cloudinary-sass-loader.
+As it is a wrapper around [Sass Loader](https://www.npmjs.com/package/sass-loader), all parameters supported by Sass Loader are also supported by cloudinary-sass-loader.
 
 ## Examples
 
@@ -57,10 +55,10 @@ module.exports = {
 
 Then you can use `cloudinary-url` function in your SASS files:
 ```scss
-body { background: cloudinary-url('sample', (width:11, height:40, crop: "fit")) }
+body { background: cloudinary-url('sample', (width: 11, height: 40, crop: "fit")) }
 ```
 
-As a result it will be rendered to actual file url:
+The loader will transpile this to a simple url:
 ```css
 body { background: url("http://res.cloudinary.com/demo/image/upload/c_fit,h_40,w_11/sample")) }
 ```
