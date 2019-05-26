@@ -2,15 +2,15 @@
 Cloudinary
 ==========
 
-Cloudinary is a cloud service that offers a solution to a web application's entire image management pipeline. 
+Cloudinary is a cloud service that offers a solution to a web application's entire image management pipeline.
 
-Easily upload images to the cloud. Automatically perform smart image resizing, cropping and conversion without installing any complex software. Integrate Facebook or Twitter profile image extraction in a snap, in any dimension and style to match your website's graphics requirements. Images are seamlessly delivered through a fast CDN, and much much more. 
+Easily upload images to the cloud. Automatically perform smart image resizing, cropping and conversion without installing any complex software. Integrate Facebook or Twitter profile image extraction in a snap, in any dimension and style to match your website's graphics requirements. Images are seamlessly delivered through a fast CDN, and much much more.
 
 Cloudinary offers comprehensive APIs and administration capabilities and is easy to integrate with any web application, existing or new.
 
-Cloudinary provides URL and HTTP based APIs that can be easily integrated with any Web development framework. 
+Cloudinary provides URL and HTTP based APIs that can be easily integrated with any Web development framework.
 
-For SASS/SCSS, Cloudinary provides a webpack loader for simplifying the integration even further. 
+For SASS/SCSS, Cloudinary provides a webpack loader for simplifying the integration even further.
 
 It's a drop-in replacement for sass-loader with extra options.
 
@@ -30,59 +30,64 @@ Optional:
 
 As it's a wrapper around [Sass Loader](https://www.npmjs.com/package/sass-loader), all parameters, supported by it are also supported by cloudinary-sass-loader.
 
-## Examples  
+## Examples
 
 Add the loader to your webpack config:
 ```js
 // webpack.config.js
 module.exports = {
-	...
-    module: {
-        rules: [{
-            test: /\.scss$/,
-            use: [
-                "style-loader",
-                "css-loader",
-                {  
-				  loader: "cloudinary-sass-loader"),  
-				  options: {cloud_name: 'demo'} // replace cloud_name with your own
-				}
-            ]
-        }]
-    }
+  ...
+  module: {
+    rules: [{
+      test: /\.scss$/,
+      use: [
+        "style-loader",
+        "css-loader",
+        {
+          loader: "cloudinary-sass-loader",
+          options: {
+            cloud_name: 'demo' // replace 'demo' with your Cloudinary cloud name
+          }
+        }
+      ]
+    }]
+  }
 };
 ```
 
 Then you can use `cloudinary-url` function in your SASS files:
 ```scss
-   body { background: cloudinary-url('sample', (width:11, height:40, crop: "fit")) }
-``` 
+body { background: cloudinary-url('sample', (width:11, height:40, crop: "fit")) }
+```
 
 As a result it will be rendered to actual file url:
 ```css
-   body { background: url("http://res.cloudinary.com/demo/image/upload/c_fit,h_40,w_11/sample")) }
+body { background: url("http://res.cloudinary.com/demo/image/upload/c_fit,h_40,w_11/sample")) }
 ```
 
 If you want keep using sass-loader directly, you can define a custom function in your config for `cloudinary-url`
-  
+
 ```js
 // webpack.config.js
 const { cloudinaryUrlFactory } = require('cloudinary-sass-loader');
 module.exports = {
-	...
-    module: {
-        rules: [{
-            test: /\.scss$/,
-            use: [
-                "style-loader",
-                "css-loader",
-                {  
-				  loader: "sass-loader"),  
-				  options: {
-				    functions: {'cloudinary-url($id, $params)': cloudinaryUrlFactory('demo')}} // replace "demo" with your own cloud name
-				}
-            ]
-        }]
-    }
+  ...
+  module: {
+    rules: [{
+      test: /\.scss$/,
+      use: [
+        "style-loader",
+        "css-loader",
+        {
+          loader: "sass-loader",
+          options: {
+            functions: {
+              'cloudinary-url($id, $params)': cloudinaryUrlFactory('demo') // replace 'demo' with your Cloudinary cloud name
+            }
+          }
+        }
+      ]
+    }]
+  }
 };
 ```
