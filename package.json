@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Sass loader for Webpack with cloudinary-url support",
   "main": "lib/loader.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "compile": "babel src --out-dir lib",
     "build": "npm run compile",
