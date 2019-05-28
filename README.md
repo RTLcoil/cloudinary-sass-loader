@@ -67,11 +67,14 @@ body { background: url("http://res.cloudinary.com/demo/image/upload/c_fit,h_40,w
 
 ### Using sass-loader
 
-If you want keep using sass-loader directly, you can define a custom function in your config for `cloudinary-url`
+If you want keep using sass-loader directly, you can define a custom function for sass-loader to handle `cloudinary-url`.
+
+Be sure to require `cloudinaryUrlFactory` in your webpack config file.
 
 ```js
 // webpack.config.js
 const { cloudinaryUrlFactory } = require('cloudinary-sass-loader');
+
 module.exports = {
   ...
   module: {
