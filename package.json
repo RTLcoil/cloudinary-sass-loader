@@ -12,9 +12,8 @@
     "coverage": "npm test",
     "pretest": "npm run build",
     "test": "jest",
-    "prelint": "npm run build",
     "lint": "eslint src test",
-    "prepublishOnly": "npm test",
+    "prepublishOnly": "npm test && npm run lint && npm run lint-test-style",
     "lint-test-style": "sass-lint -c .sass-lint.yml 'test/**/*.scss' -v"
   },
   "keywords": [],
