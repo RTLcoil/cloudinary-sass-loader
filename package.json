@@ -2,34 +2,28 @@
   "name": "cloudinary-sass-loader",
   "version": "1.0.0",
   "description": "Sass loader for Webpack with cloudinary-url support",
-  "main": "lib/loader.js",
+  "keywords": [],
+  "license": "MIT",
+  "author": "Cloudinary",
   "files": [
     "lib"
   ],
+  "main": "lib/loader.js",
   "scripts": {
-    "compile": "babel src --out-dir lib",
     "build": "npm run compile",
+    "compile": "babel src --out-dir lib",
     "coverage": "npm test",
-    "pretest": "npm run build",
-    "test": "jest",
     "lint": "eslint src test",
+    "lint-test-style": "sass-lint -c .sass-lint.yml 'test/**/*.scss' -v",
     "prepublishOnly": "npm test && npm run lint && npm run lint-test-style",
-    "lint-test-style": "sass-lint -c .sass-lint.yml 'test/**/*.scss' -v"
-  },
-  "keywords": [],
-  "author": "Cloudinary",
-  "license": "MIT",
-  "engines": {
-    "node": ">=6.0.0"
+    "pretest": "npm run build",
+    "test": "jest"
   },
   "dependencies": {
     "cloudinary-core": "^2.6.2",
     "loader-utils": "^1.2.3",
     "lodash": "^4.17.11",
     "sass-loader": "^7.1.0"
-  },
-  "peerDependencies": {
-    "webpack": "^4.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -53,5 +47,11 @@
     "stylelint-webpack-plugin": "^0.10.5",
     "webpack": "^4.29.6",
     "webpack-shell-plugin": "^0.5.0"
+  },
+  "peerDependencies": {
+    "webpack": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=6.0.0"
   }
 }
