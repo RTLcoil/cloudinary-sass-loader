@@ -87,7 +87,7 @@ module.exports = {
           loader: "sass-loader",
           options: {
             functions: {
-              'cloudinary-url($id, $params)': cloudinaryUrlFactory('demo') // replace 'demo' with your Cloudinary cloud name
+              'cloudinary-url($id, $params)': cloudinaryUrlFactory({cloud_name: 'demo'}) // replace 'demo' with your Cloudinary cloud name
             }
           }
         }
