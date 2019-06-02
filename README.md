@@ -96,3 +96,20 @@ module.exports = {
   }
 };
 ```
+
+### With Webpacker in Ruby on Rails
+
+Webpacker comes preconfigured with sass-loader, the easiest way to use cloudinary-sass-loader with it is with a custom function.
+
+In the Webpack configuration file for your environment add the following lines:
+
+```js
+const { cloudinaryUrlFactory } = require('cloudinary-sass-loader');
+environment.loaders
+  .get('sass')
+  .use.find(item => item.loader === 'sass-loader').options.functions = {
+    'cloudinary-url($id, $params)': cloudinaryUrlFactory(
+      { cloud_name: 'demo' } // replace 'demo' with your Cloudinary cloud name
+    ),
+  };
+```
